@@ -3,12 +3,15 @@
 export const addHome = function() {
     const container = document.querySelector("#content");
 
-    const newH1 = document.createElement("h1");
-    const newP = document.createElement("p");
+    const header = document.createElement("h1");
+    const txt1 = document.createElement("p");
+    const txt2 = document.createElement("p");
 
-    newH1.textContent = "OCTO DADDY!";
-    newP.textContent = "This is the page for the Octo Daddy. Prepare thy anus";
+    header.textContent = "Welcome Eight and All";
+    txt1.textContent = "Our humble little establishment has been a cornerstone of this part of the galaxy for millennia. We started out as a little shack in old Tokyo, where a man whose name is long lost to time served nothing but various parts of octopus.";
+    txt2.textContent = "Imagine the irony a thousand years later to find that this establishment is still open, but the human chef and the octopus dinner have swapped places!";
 
-    container.appendChild(newH1);
-    container.appendChild(newP);
+    container.appendChild(header);
+    container.appendChild(txt1);
+    container.appendChild(txt2);
 };

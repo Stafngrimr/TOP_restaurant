@@ -3,18 +3,20 @@
 export const addMenu = function() {
     const container = document.querySelector("#content");
 
-    const firstItem = document.createElement("h1");
+    const firstItem = document.createElement("h2");
     const firstDesc = document.createElement("p");
-    const secondItem = document.createElement("h1");
+    const secondItem = document.createElement("h2");
     const secondDesc = document.createElement("p");
 
-    firstItem.textContent = "Noodle Power";
-    firstDesc.textContent = "Some noodles with a hell of a lot of power!";
-    secondItem.textContent = "Burger with Fries";
-    secondDesc.textContent = "Weakest item on the menu, but everyone's gotta have it";
+    firstItem.textContent = "Power Noodles";
+    firstDesc.textContent = "Crab based noodle dish, with spring onions and chilli peppers.";
+    secondItem.textContent = "Shark Fin Soup";
+    secondDesc.textContent = "A flavorful soup made from Shark's fins and an aromatic garnish";
 
     container.appendChild(firstItem);
     container.appendChild(firstDesc);
     container.appendChild(secondItem);
     container.appendChild(secondDesc);
 };
+
+

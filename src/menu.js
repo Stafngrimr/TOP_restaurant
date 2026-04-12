@@ -1,5 +1,3 @@
-// src/menu.js
-
 export const addMenu = function() {
     const container = document.querySelector("#content");
     
@@ -37,14 +35,48 @@ export const addMenu = function() {
     };
 
     const chefTab = function() {
-        const firstItem = document.createElement("h2");
-        const firstDesc = document.createElement("p");
-        
-        firstItem.textContent = "Legs & Mash";
-        firstDesc.textContent = "Delicious and sumptuous Human leg, served with mashed potatoes and gravy.";
+        let itemContent = ["Legs & Mash", "Eyes Surprise", "Human Bacon Sandwich", "Sunday Roast"];
+        let descContent = ["Delicious and sumtuous human leg, served on a bed of mashed potatoes, covered in gravy", "A bucket of Human eyes! Juicier even than the mussels!", "Nobody mourns the extinction of the pig since this creation", "Old Human tradition from what was north 'Europe' of roasting meat on Sunday."];
 
-        menuDiv.appendChild = (firstItem);
-        menuDiv.appendChild = (firstDesc);
+        for(let i=0; i<items.length; i++) {
+            items[i] = document.createElement("h2");
+            items[i].textContent = itemContent[i];
+            menuDiv.appendChild(items[i]);
+
+            descs[i] = document.createElement("p");
+            descs[i].textContent = descContent[i];
+            menuDiv.appendChild(descs[i]);
+        };
+    };
+
+    const veganTab = function() {
+        const itemContent = ["1", "2", "3", "4"];
+        const descContent = ["First one", "Second one", "Third one", "Fourth one"];
+
+        for(let i=0; i<items.length; i++) {
+            items[i] = document.createElement("h2");
+            items[i].textContent = itemContent[i];
+            menuDiv.appendChild(items[i]);
+
+            descs[i] = document.createElement("p");
+            descs[i].textContent = descContent[i];
+            menuDiv.appendChild(descs[i]);
+        };
+    };
+
+    const drinksTab = function() {
+        const itemContent = ["drinks 1", "2", "3", "4"];
+        const descContent = ["First one", "Second one", "Third one", "Fourth one"];
+
+        for(let i=0; i<items.length; i++) {
+            items[i] = document.createElement("h2");
+            items[i].textContent = itemContent[i];
+            menuDiv.appendChild(items[i]);
+
+            descs[i] = document.createElement("p");
+            descs[i].textContent = descContent[i];
+            menuDiv.appendChild(descs[i]);
+        };
     };
 
     tabButtons[0].addEventListener("click", function() {
@@ -54,6 +86,12 @@ export const addMenu = function() {
     tabButtons[1].addEventListener("click", function() {
         chefTab();
     });
+
+    tabButtons[2].addEventListener("click", function() {
+        veganTab();
+    });
+
+    tabButtons[3].addEventListener("click", function() {
+        drinksTab();
+    });
 };
-
-

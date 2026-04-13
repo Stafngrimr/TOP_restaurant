@@ -2,8 +2,31 @@ export const addMenu = function() {
     const container = document.querySelector("#content");
     
     const tabDiv = document.createElement("div");
+    tabDiv.setAttribute("id", "tabdiv");
     container.appendChild(tabDiv);
+
     const menuDiv = document.createElement("div");
+    menuDiv.setAttribute("id", "menudiv");
+    //menuDiv.textContent = "Please peruse the menu and give us a call to order via the contact page!";
+    const image1 = document.createElement("div");
+    image1.className = "menuItemImage";
+    //image1.setAttribute("id", "menuItemImage");
+    const image2 = document.createElement("div");
+    image2.className = "menuItemImage";
+    //image1.setAttribute("id", "menuItemImage");
+    const image3 = document.createElement("div");
+    image3.className = "menuItemImage";
+    //image1.setAttribute("id", "menuItemImage");
+    const image4 = document.createElement("div");
+    image4.className = "menuItemImage";
+    //image1.setAttribute("id", "menuItemImage");
+
+
+
+    menuDiv.appendChild(image1);
+    menuDiv.appendChild(image2);
+    menuDiv.appendChild(image3);
+    menuDiv.appendChild(image4);
     container.appendChild(menuDiv);
 
     let tabs = ["Seafood", "Chef", "Vegan", "Drinks"];
@@ -26,7 +49,6 @@ export const addMenu = function() {
             items[i] = document.createElement("h2");
             items[i].textContent = itemContent[i];
             menuDiv.appendChild(items[i]);
-            // weird error happening right here, but doesn't happen right after clicking on "menu".. something is overwriting the menuDiv? or something..
 
             descs[i] = document.createElement("p");
             descs[i].textContent = descContent[i];
@@ -80,18 +102,22 @@ export const addMenu = function() {
     };
 
     tabButtons[0].addEventListener("click", function() {
+        menuDiv.textContent = "";
         seaTab();
     });
 
     tabButtons[1].addEventListener("click", function() {
+        menuDiv.textContent = "";
         chefTab();
     });
 
     tabButtons[2].addEventListener("click", function() {
+        menuDiv.textContent = "";
         veganTab();
     });
 
     tabButtons[3].addEventListener("click", function() {
+        menuDiv.textContent = "";
         drinksTab();
     });
 };

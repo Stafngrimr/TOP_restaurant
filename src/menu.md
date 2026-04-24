@@ -1,3 +1,8 @@
+# challenges
+
+- images: background, border, moving gifs?, how to get these working?
+- 
+
 # menu items
 
 Divided into tabs also
@@ -50,5 +55,8 @@ Different sections to show different items on the same page without moving away
 - Only for the cold-blooded!
 
 ### 
+
+
+
 
 

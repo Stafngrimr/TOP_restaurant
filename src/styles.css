@@ -19,15 +19,17 @@ nav {
 button {
     height: 60px;
     width: 150px;
-    color: white;
-    font-size: 2em;
-    background: rgba(1, 1, 1, 50%);
-    border: 1px solid white;
 }
 
-button#home {
-    color: red;
-    border: 1px solid red;
+#home {
+    position: relative;
+}
+
+img {
+    float: none;
+    position: relative;
+    left: -25px;
+    top: -25px;
 }
 
 #content {

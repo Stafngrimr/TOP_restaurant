@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    background-image: url("./img/octo-bg.jpg");
+    background-image: url("img/restaurant_bg.png");
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,9 @@ button {
     width: 150px;
 }
 
-#home {
+#home,
+#menu,
+#contact {
     position: relative;
 }
 
@@ -36,7 +38,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 100px;
     background: rgba(0, 69, 71, 80%);
     width: 1100px;
     height: 650px;
@@ -72,4 +74,13 @@ button.menuOptions {
     border: 1px solid blue;
     border-radius: 10px;
     padding: 4px;
+}
+
+#signature {
+    color: white;
+    margin-right: 0%;
+    width: 100px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
 }

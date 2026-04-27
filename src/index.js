@@ -4,6 +4,7 @@ import "./styles.css";
 import { addHome, greeting } from "./home.js";
 import { addMenu } from "./menu.js";
 import { addContact } from "./contact.js";
+import { load } from "./load.js";
 import homeActiveNotpressed from "./img/home_active_notpressed.png";
 import homeInactiveNotpressed from "./img/home_inactive_notpressed.png";
 import homeActivePressed from "./img/home_active_pressed.png";
@@ -22,21 +23,14 @@ const menuButton = document.querySelector("#menu");
 const contactButton = document.querySelector("#contact");
 const content = document.querySelector("#content");
 
-const load = (function() {
-    addHome();
-    homeButton.src = homeActiveNotpressed;
-    menuButton.src = menuInactiveNotpressed;
-    contactButton.src = contactInactiveNotpressed;
+const body = document.querySelector("body");
+const sig = document.createElement("p");
+sig.setAttribute("id", "signature");
+sig.textContent = "by Stafngrimr";
+body.appendChild(sig);
 
-    let page = "home";
-})();
-
-
-// Not the best way to implement the below. If statements aren't working? What?
-// the buttons are coming up, but need to work out BETTER logic for (in)active stuff
-//
-// Now the buttons arent' changing the links?
-
+load();
+let page = "home";
 
 homeButton.addEventListener("click", function() {
     page = "home";
@@ -49,11 +43,19 @@ homeButton.addEventListener("click", function() {
 });
 
 homeButton.addEventListener("mouseenter", function() {
-    homeButton.src = homeActivePressed;
+    if (page === "home") {
+        homeButton.src = homeActivePressed;
+    } else {
+        homeButton.src = homeInactivePressed;
+    }
 });
 
 homeButton.addEventListener("mouseleave", function() {
-    homeButton.src = homeActiveNotpressed;
+    if (page === "home") {
+        homeButton.src = homeActiveNotpressed;
+    } else {
+        homeButton.src = homeInactiveNotpressed;
+    }
 });
 
 menuButton.addEventListener("click", function() {
@@ -67,11 +69,19 @@ menuButton.addEventListener("click", function() {
 });
 
 menuButton.addEventListener("mouseenter", function() {
-    menuButton.src = menuActivePressed;
+    if (page === "menu") {
+        menuButton.src = menuActivePressed;
+    } else {
+        menuButton.src = menuInactivePressed;
+    }
 });
 
 menuButton.addEventListener("mouseleave", function() {
-    menuButton.src = menuActiveNotpressed;
+    if (page === "menu") {
+        menuButton.src = menuActiveNotpressed;
+    } else {
+        menuButton.src = menuInactiveNotpressed;
+    }
 });
 
 contactButton.addEventListener("click", function() {
@@ -85,9 +95,18 @@ contactButton.addEventListener("click", function() {
 });
 
 contactButton.addEventListener("mouseenter", function() {
-    contactButton.src = contactActivePressed;
+    if (page === "contact") {
+        contactButton.src = contactActivePressed;
+    } else {
+        contactButton.src = contactInactivePressed;
+    }
 });
 
 contactButton.addEventListener("mouseleave", function() {
-    contactButton.src = contactActiveNotpressed;
+    if (page === "contact") {
+        contactButton.src = contactActiveNotpressed;
+    } else {
+        contactButton.src = contactInactiveNotpressed;
+    }
 });
+

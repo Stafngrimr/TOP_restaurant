@@ -22,7 +22,13 @@ nav {
 
 h1 {
     font-family: 'Sixtyfour', monospace;
+    color: turquoise;
     font-size: 2em;
+}
+
+span {
+    color: #7d3628;
+    font-size: 2.5em;
 }
 
 button {

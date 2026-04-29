@@ -14,24 +14,36 @@ export const addMenu = function() {
     const image1 = document.createElement("div");
     image1.className = "menuItemImage";
     image1.setAttribute("id", "menuItem11");
+    const overlay1 = document.createElement("div");
+    overlay1.className = "overlay";    
 
     const image2 = document.createElement("div");
     image2.className = "menuItemImage";
     image2.setAttribute("id", "menuItem12");
+    const overlay2 = document.createElement("div");
+    overlay2.className = "overlay";
     
     const image3 = document.createElement("div");
     image3.className = "menuItemImage";
     image3.setAttribute("id", "menuItem13");
+    const overlay3 = document.createElement("div");
+    overlay3.className = "overlay";
 
     const image4 = document.createElement("div");
     image4.className = "menuItemImage";
     image4.setAttribute("id", "menuItem14");
+    const overlay4 = document.createElement("div");
+    overlay4.className = "overlay";
 
-    menuDiv.appendChild(image1);
-    menuDiv.appendChild(image2);
-    menuDiv.appendChild(image3);
-    menuDiv.appendChild(image4);
     container.appendChild(menuDiv);
+    menuDiv.appendChild(image1);
+    image1.appendChild(overlay1);
+    menuDiv.appendChild(image2);
+    image2.appendChild(overlay2);
+    menuDiv.appendChild(image3);
+    image3.appendChild(overlay3);
+    menuDiv.appendChild(image4);
+    image4.appendChild(overlay4);
 
     // creating content for tabs & setting up buttons
     let tabs = ["Seafood", "Chef", "Vegan", "Drinks"];
@@ -43,8 +55,7 @@ export const addMenu = function() {
         tabDiv.appendChild(tabButtons[i]);
     };
 
-    let items = ["item1", "item2", "item3", "item4"];
-    let descs = ["desc1", "desc2", "desc3", "desc4"]
+    const overlays = [overlay1, overlay2, overlay3, overlay4]
 
     // creating content for menu items
     const seaTab = function() {
@@ -56,53 +67,75 @@ export const addMenu = function() {
         image3.setAttribute("id", "menuItem13");
         image4.setAttribute("id", "menuItem14");
 
-        image1.addEventListener("mouseenter", function() {
-            image1.textContent = itemContent[0];
-            console.log("enter");
-        });
+        for (let i = 0; i < overlays.length; i++) {
+            overlays[i].addEventListener("mouseenter", function() {
+                overlays[i].textContent = itemContent[i];
+            });
 
-        image1.addEventListener("mouseleave", function() {
-            image1.textContent = "";
-            console.log("leave");
-        });
+            overlays[i].addEventListener("mouseleave", function() {
+                overlays[i].textContent = itemContent[i];
+            });
+        }
     };
 
     const chefTab = function() {
         let itemContent = ["Legs & Mash", "Eyes Surprise", "Human Bacon Sandwich", "Sunday Roast"];
         let descContent = ["Delicious and sumtuous human leg, served on a bed of mashed potatoes, covered in gravy", "A bucket of Human eyes! Juicier even than the mussels!", "Nobody mourns the extinction of the pig since this creation", "Old Human tradition from what was north 'Europe' of roasting meat on Sunday."];
-s
+
+        image1.setAttribute("id", "menuItem21");
+        image2.setAttribute("id", "menuItem22");
+        image3.setAttribute("id", "menuItem23");
+        image4.setAttribute("id", "menuItem24");
+
+        for (let i = 0; i < overlays.length; i++) {
+            overlays[i].addEventListener("mouseenter", function() {
+                overlays[i].textContent = itemContent[i];
+            });
+
+            overlays[i].addEventListener("mouseleave", function() {
+                overlays[i].textContent = itemContent[i];
+            });
+        }
     };
 
     const veganTab = function() {
         const itemContent = ["1", "2", "3", "4"];
         const descContent = ["First one", "Second one", "Third one", "Fourth one"];
 
-        for(let i=0; i<items.length; i++) {
-            items[i] = document.createElement("h2");
-            items[i].textContent = itemContent[i];
-            menuDiv.appendChild(items[i]);
+        image1.setAttribute("id", "menuItem31");
+        image2.setAttribute("id", "menuItem32");
+        image3.setAttribute("id", "menuItem33");
+        image4.setAttribute("id", "menuItem34");
 
-            descs[i] = document.createElement("p");
-            descs[i].textContent = descContent[i];
-            menuDiv.appendChild(descs[i]);
-        };
+        for (let i = 0; i < overlays.length; i++) {
+            overlays[i].addEventListener("mouseenter", function() {
+                overlays[i].textContent = itemContent[i];
+            });
+
+            overlays[i].addEventListener("mouseleave", function() {
+                overlays[i].textContent = itemContent[i];
+            });
+        }
     };
 
     const drinksTab = function() {
         const itemContent = ["drinks 1", "2", "3", "4"];
         const descContent = ["First one", "Second one", "Third one", "Fourth one"];
 
+        image1.setAttribute("id", "menuItem31");
+        image2.setAttribute("id", "menuItem32");
+        image3.setAttribute("id", "menuItem33");
+        image4.setAttribute("id", "menuItem34");
 
-    // 
-        for(let i=0; i<items.length; i++) {
-            items[i] = document.createElement("h2");
-            items[i].textContent = itemContent[i];
-            menuDiv.appendChild(items[i]);
+        for (let i = 0; i < overlays.length; i++) {
+            overlays[i].addEventListener("mouseenter", function() {
+                overlays[i].textContent = itemContent[i];
+            });
 
-            descs[i] = document.createElement("p");
-            descs[i].textContent = descContent[i];
-            menuDiv.appendChild(descs[i]);
-        };
+            overlays[i].addEventListener("mouseleave", function() {
+                overlays[i].textContent = itemContent[i];
+            });
+        }
     };
 
     // SEAFOOD onclick
@@ -114,8 +147,6 @@ s
                 button.classList.remove("active");
             }
         });
-
-        menuDiv.textContent = "";
         seaTab();
     });
 
@@ -128,7 +159,6 @@ s
                 button.classList.remove("active");
             }
         });
-        menuDiv.textContent = "";
         chefTab();
     });
 
@@ -141,8 +171,6 @@ s
                 button.classList.remove("active");
             }
         });
-
-        menuDiv.textContent = "";
         veganTab();
     });
 
@@ -155,8 +183,6 @@ s
                 button.classList.remove("active");
             }
         });
-
-        menuDiv.textContent = "";
         drinksTab();
     });
 };

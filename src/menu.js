@@ -1,13 +1,12 @@
 export const addMenu = function() {
-    
     const container = document.querySelector("#content");
     
-    // creating div for menu headers
+    // div for menu headers
     const tabDiv = document.createElement("div");
     tabDiv.setAttribute("id", "tabdiv");
     container.appendChild(tabDiv);
 
-    // creating div & elements for the menu items
+    // div & elements for the menu items
     const menuDiv = document.createElement("div");
     menuDiv.setAttribute("id", "menudiv");
 
@@ -29,12 +28,17 @@ export const addMenu = function() {
     const overlay3 = document.createElement("div");
     overlay3.className = "overlay";
 
+    // change the above so that the image is on the "top" layer and the overlays become underlays with the text on them
+    // They should peek out the bottom when you hover over the item image
+    // Better to do this once we actually have all the images
+
     const image4 = document.createElement("div");
     image4.className = "menuItemImage";
     image4.setAttribute("id", "menuItem14");
     const overlay4 = document.createElement("div");
     overlay4.className = "overlay";
 
+    // attaching images/underlays
     container.appendChild(menuDiv);
     menuDiv.appendChild(image1);
     image1.appendChild(overlay1);
@@ -45,7 +49,7 @@ export const addMenu = function() {
     menuDiv.appendChild(image4);
     image4.appendChild(overlay4);
 
-    // creating content for tabs & setting up buttons
+    // content for tabs & setting up buttons
     let tabs = ["Seafood", "Chef", "Vegan", "Drinks"];
     let tabButtons = ["seaButton", "chefButton", "veganButton", "drinksButton"]
     for (let i=0; i<tabs.length; i++) {
@@ -55,12 +59,12 @@ export const addMenu = function() {
         tabDiv.appendChild(tabButtons[i]);
     };
 
+    // array for iterating over underlays
     const overlays = [overlay1, overlay2, overlay3, overlay4]
 
-    // creating content for menu items
+    // content for menu items
     const seaTab = function() {
         let itemContent = ["Power Noodles", "Shark Fin Soup", "Mussel Surprise", "Fish Heads on Toast"];
-        let descContent = ["Crab based noodle dish, with Spring Onions & Chilli Peppers", "A flavorful soup made from Shark's Fins, complimented by aromatic garnishing", "A bucket of Mussels, what could be better!", "The best part of the Fish on some Toast. To recall simpler times in life"];
 
         image1.setAttribute("id", "menuItem11");
         image2.setAttribute("id", "menuItem12");
@@ -80,7 +84,6 @@ export const addMenu = function() {
 
     const chefTab = function() {
         let itemContent = ["Legs & Mash", "Eyes Surprise", "Human Bacon Sandwich", "Sunday Roast"];
-        let descContent = ["Delicious and sumtuous human leg, served on a bed of mashed potatoes, covered in gravy", "A bucket of Human eyes! Juicier even than the mussels!", "Nobody mourns the extinction of the pig since this creation", "Old Human tradition from what was north 'Europe' of roasting meat on Sunday."];
 
         image1.setAttribute("id", "menuItem21");
         image2.setAttribute("id", "menuItem22");
@@ -99,8 +102,7 @@ export const addMenu = function() {
     };
 
     const veganTab = function() {
-        const itemContent = ["1", "2", "3", "4"];
-        const descContent = ["First one", "Second one", "Third one", "Fourth one"];
+        const itemContent = ["Seaweed Salad", "Mushroom Risotto", "Grass Tower", "Algae Soup"];
 
         image1.setAttribute("id", "menuItem31");
         image2.setAttribute("id", "menuItem32");
@@ -119,8 +121,7 @@ export const addMenu = function() {
     };
 
     const drinksTab = function() {
-        const itemContent = ["drinks 1", "2", "3", "4"];
-        const descContent = ["First one", "Second one", "Third one", "Fourth one"];
+        const itemContent = ["Hot Drinks", "Salt-water", "18 Year Scotch", "Ink Soda"];
 
         image1.setAttribute("id", "menuItem31");
         image2.setAttribute("id", "menuItem32");

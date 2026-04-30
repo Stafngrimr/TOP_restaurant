@@ -44,7 +44,13 @@ Different sections to show different items on the same page without moving away
 
 ## Vegan
 
+### Seaweed Salad
 
+### Mushroom Risotto
+
+### Grass Tower
+
+### Algae Soup
 
 ## Drinks
 
@@ -54,7 +60,11 @@ Different sections to show different items on the same page without moving away
 ### Salt-Water
 - Only for the cold-blooded!
 
-### 
+### Scotch 18 year
+- Not served in any other way
+
+### Ink Soda
+- Yummy and useful!
 
 
 

@@ -1,3 +1,8 @@
+import item11 from "./img/1-1.png";
+import item12 from "./img/1-2.png";
+import item13 from "./img/1-3.png";
+import item14 from "./img/1-4.png";
+
 export const addMenu = function() {
     const container = document.querySelector("#content");
     
@@ -10,44 +15,56 @@ export const addMenu = function() {
     const menuDiv = document.createElement("div");
     menuDiv.setAttribute("id", "menudiv");
 
-    const image1 = document.createElement("div");
+    const cont1 = document.createElement("div");
+    cont1.className = "menuContainers";
+    const image1 = document.createElement("img");
     image1.className = "menuItemImage";
-    image1.setAttribute("id", "menuItem11");
-    const overlay1 = document.createElement("div");
-    overlay1.className = "overlay";    
+    image1.src = item11;
+    const under1 = document.createElement("div");
+    under1.className = "underlay";
 
-    const image2 = document.createElement("div");
+    const cont2 = document.createElement("div");
+    cont2.className = "menuContainers";
+    const image2 = document.createElement("img");
     image2.className = "menuItemImage";
-    image2.setAttribute("id", "menuItem12");
-    const overlay2 = document.createElement("div");
-    overlay2.className = "overlay";
+    image2.src = item12;
+    const under2 = document.createElement("div");
+    under2.className = "underlay";
     
-    const image3 = document.createElement("div");
+    const cont3 = document.createElement("div");
+    cont3.className = "menuContainers";
+    const image3 = document.createElement("img");
     image3.className = "menuItemImage";
-    image3.setAttribute("id", "menuItem13");
-    const overlay3 = document.createElement("div");
-    overlay3.className = "overlay";
+    image3.src = item13;
+    const under3 = document.createElement("div");
+    under3.className = "underlay";
 
-    // change the above so that the image is on the "top" layer and the overlays become underlays with the text on them
-    // They should peek out the bottom when you hover over the item image
-    // Better to do this once we actually have all the images
-
-    const image4 = document.createElement("div");
+    const cont4 = document.createElement("div");
+    cont4.className = "menuContainers";
+    const image4 = document.createElement("img");
     image4.className = "menuItemImage";
-    image4.setAttribute("id", "menuItem14");
-    const overlay4 = document.createElement("div");
-    overlay4.className = "overlay";
+    image4.src = item14;
+    const under4 = document.createElement("div");
+    under4.className = "underlay";
 
     // attaching images/underlays
     container.appendChild(menuDiv);
-    menuDiv.appendChild(image1);
-    image1.appendChild(overlay1);
-    menuDiv.appendChild(image2);
-    image2.appendChild(overlay2);
-    menuDiv.appendChild(image3);
-    image3.appendChild(overlay3);
-    menuDiv.appendChild(image4);
-    image4.appendChild(overlay4);
+
+    menuDiv.appendChild(cont1);
+    cont1.appendChild(image1);
+    cont1.appendChild(under1);
+
+    menuDiv.appendChild(cont2);
+    cont2.appendChild(image2);
+    cont2.appendChild(under2);
+    
+    menuDiv.appendChild(cont3);
+    cont3.appendChild(image3);
+    cont3.appendChild(under3);
+    
+    menuDiv.appendChild(cont4);
+    cont4.appendChild(image4);
+    cont4.appendChild(under4);
 
     // content for tabs & setting up buttons
     let tabs = ["Seafood", "Chef", "Vegan", "Drinks"];
@@ -58,9 +75,10 @@ export const addMenu = function() {
         tabButtons[i].textContent = tabs[i];
         tabDiv.appendChild(tabButtons[i]);
     };
+    tabButtons[0].classList.add("active");
 
     // array for iterating over underlays
-    const overlays = [overlay1, overlay2, overlay3, overlay4]
+    const unders = [under1, under2, under3, under4]
 
     // content for menu items
     const seaTab = function() {
@@ -71,13 +89,13 @@ export const addMenu = function() {
         image3.setAttribute("id", "menuItem13");
         image4.setAttribute("id", "menuItem14");
 
-        for (let i = 0; i < overlays.length; i++) {
-            overlays[i].addEventListener("mouseenter", function() {
-                overlays[i].textContent = itemContent[i];
+        for (let i = 0; i < unders.length; i++) {
+            unders[i].addEventListener("mouseenter", function() {
+                unders[i].textContent = itemContent[i];
             });
 
-            overlays[i].addEventListener("mouseleave", function() {
-                overlays[i].textContent = itemContent[i];
+            unders[i].addEventListener("mouseleave", function() {
+                unders[i].textContent = itemContent[i];
             });
         }
     };
@@ -90,13 +108,13 @@ export const addMenu = function() {
         image3.setAttribute("id", "menuItem23");
         image4.setAttribute("id", "menuItem24");
 
-        for (let i = 0; i < overlays.length; i++) {
-            overlays[i].addEventListener("mouseenter", function() {
-                overlays[i].textContent = itemContent[i];
+        for (let i = 0; i < unders.length; i++) {
+            unders[i].addEventListener("mouseenter", function() {
+                unders[i].textContent = itemContent[i];
             });
 
-            overlays[i].addEventListener("mouseleave", function() {
-                overlays[i].textContent = itemContent[i];
+            unders[i].addEventListener("mouseleave", function() {
+                unders[i].textContent = itemContent[i];
             });
         }
     };
@@ -109,13 +127,13 @@ export const addMenu = function() {
         image3.setAttribute("id", "menuItem33");
         image4.setAttribute("id", "menuItem34");
 
-        for (let i = 0; i < overlays.length; i++) {
-            overlays[i].addEventListener("mouseenter", function() {
-                overlays[i].textContent = itemContent[i];
+        for (let i = 0; i < unders.length; i++) {
+            unders[i].addEventListener("mouseenter", function() {
+                unders[i].textContent = itemContent[i];
             });
 
-            overlays[i].addEventListener("mouseleave", function() {
-                overlays[i].textContent = itemContent[i];
+            unders[i].addEventListener("mouseleave", function() {
+                unders[i].textContent = itemContent[i];
             });
         }
     };
@@ -123,18 +141,18 @@ export const addMenu = function() {
     const drinksTab = function() {
         const itemContent = ["Hot Drinks", "Salt-water", "18 Year Scotch", "Ink Soda"];
 
-        image1.setAttribute("id", "menuItem31");
-        image2.setAttribute("id", "menuItem32");
-        image3.setAttribute("id", "menuItem33");
-        image4.setAttribute("id", "menuItem34");
+        image1.setAttribute("id", "menuItem41");
+        image2.setAttribute("id", "menuItem42");
+        image3.setAttribute("id", "menuItem43");
+        image4.setAttribute("id", "menuItem44");
 
-        for (let i = 0; i < overlays.length; i++) {
-            overlays[i].addEventListener("mouseenter", function() {
-                overlays[i].textContent = itemContent[i];
+        for (let i = 0; i < unders.length; i++) {
+            unders[i].addEventListener("mouseenter", function() {
+                unders[i].textContent = itemContent[i];
             });
 
-            overlays[i].addEventListener("mouseleave", function() {
-                overlays[i].textContent = itemContent[i];
+            unders[i].addEventListener("mouseleave", function() {
+                unders[i].textContent = itemContent[i];
             });
         }
     };
@@ -187,3 +205,4 @@ export const addMenu = function() {
         drinksTab();
     });
 };
+
